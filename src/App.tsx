@@ -92,13 +92,13 @@ function App() {
               >
                 {images.map((i) => (
                   <div key={i.label} className="item">
-                    <img src={i.url} alt={i.label} height={500} />
+                    <img src={i.url} alt={i.label} />
                   </div>
                 ))}
 
                 {customImgURL ? (
                   <div className="item">
-                    <img src={customImgURL} alt="custom" height={500} />
+                    <img src={customImgURL} alt="custom" />
                   </div>
                 ) : null}
               </Carousel>
