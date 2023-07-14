@@ -28,7 +28,13 @@ header {
   justify-content: space-between;
   padding: 12px 16px;
   margin: 0;
-  background-color: #c1c1c1;
+  background: #1677ff;
+  background: -webkit-linear-gradient(to right, #0575E6, #1677ff);
+  background: linear-gradient(to right, #0575E6, #1677ff);
+}
+
+header .ant-typography {
+  color: white;
 }
 
 .item {
