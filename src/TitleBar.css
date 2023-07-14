@@ -22,3 +22,11 @@ header {
 header .ant-typography {
   color: white;
 }
+
+@media (min-width: 1200px) {
+  header {
+    padding: 16px 32px !important;
+    margin: 24px 0 !important;
+    border-radius: 8px;
+  }
+}

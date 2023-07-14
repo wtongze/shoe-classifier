@@ -10,19 +10,15 @@ interface Props {
 function UploadButton(props: Props) {
   return (
     <Upload
+      accept="image/*"
       showUploadList={false}
       onChange={(info) => {
         const { status } = info.file;
         if (status === 'done') {
-          props.messageApi.success(
-            `${info.file.name} file uploaded successfully.`
-          );
+          props.messageApi.success('Image uploaded successfully.');
         } else if (status === 'error') {
-          props.messageApi.error(`${info.file.name} file upload failed.`);
+          props.messageApi.error('Failed to upload image.');
         }
-      }}
-      onDrop={(e) => {
-        console.log('Dropped files', e.dataTransfer.files);
       }}
       customRequest={({ file, onSuccess, onError }) => {
         const reader = new FileReader();

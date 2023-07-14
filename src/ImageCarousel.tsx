@@ -18,6 +18,7 @@ function ImageCarousel(props: Props) {
       <Carousel
         ref={props.carouselRef}
         swipeToSlide
+        draggable
         arrows
         prevArrow={<ArrowButton direction="left" />}
         nextArrow={<ArrowButton direction="right" />}

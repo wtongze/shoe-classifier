@@ -4,17 +4,17 @@ html {
   background-color: #f1f3f5;
 }
 
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #212529;
+  }
+}
+
 body {
   margin: 0;
 }
 
 @media (min-width: 1200px) {
-  header {
-    padding: 16px 32px !important;
-    margin: 24px 0 !important;
-    border-radius: 8px;
-  }
-
   .base {
     width: 80vw;
     margin: 0 auto;
