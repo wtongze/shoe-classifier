@@ -39,14 +39,12 @@ function App() {
   const [messageApi, contextHolder] = message.useMessage();
   const [customImgURL, setCustomImgURL] = useState<string>();
 
-  if (carouselEl.current && customImgURL) {
-    carouselEl.current.goTo(3);
-  }
-
   async function makePrediction() {
     if (model && imgEl.current) {
       imgEl.current.src =
-        carouselCurr === 3 && customImgURL ? customImgURL : images[carouselCurr].url;
+        carouselCurr === 3 && customImgURL
+          ? customImgURL
+          : images[carouselCurr].url;
       const tensor = tf.browser.fromPixels(imgEl.current);
       const resized = tf.image.resizeBilinear(tensor, [240, 240]).mul(1 / 255);
       const expandedTensor = resized.expandDims();
@@ -109,7 +107,14 @@ function App() {
             <div>
               <UploadButton
                 messageApi={messageApi}
-                onUploadEnd={setCustomImgURL}
+                onUploadEnd={(url) => {
+                  setCustomImgURL(url);
+                  setTimeout(() => {
+                    if (carouselEl.current) {
+                      carouselEl.current.goTo(3);
+                    }
+                  }, 300);
+                }}
               />
               <Button type="primary" onClick={makePrediction}>
                 Predict
