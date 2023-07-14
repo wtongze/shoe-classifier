@@ -1,0 +1,21 @@
+.arrow-left {
+  left: 16px;
+}
+
+.arrow-right {
+  right: 16px;
+}
+
+.arrow-left,
+.arrow-right {
+  width: auto !important;
+  height: auto !important;
+  padding-inline-start: 8px !important;
+  padding-inline-end: 8px !important;
+  padding: 8px 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  border: none;
+}

@@ -1,0 +1,9 @@
+.title-link {
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.title-link:hover {
+  text-decoration: underline;
+}
