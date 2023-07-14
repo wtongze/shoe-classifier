@@ -2,6 +2,7 @@ import { Carousel } from 'antd';
 import ArrowButton from './ArrowButton';
 import { images } from './config';
 import { CarouselRef } from 'antd/es/carousel';
+import './ImageCarousel.css';
 
 interface Props {
   imgRef: React.Ref<HTMLImageElement>;
