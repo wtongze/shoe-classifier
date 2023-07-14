@@ -1,16 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import './App.css';
-import {
-  Button,
-  ConfigProvider,
-  App as AntdApp,
-  message,
-} from 'antd';
+import { Button, ConfigProvider, App as AntdApp, message } from 'antd';
 import TitleBar from './TitleBar';
 import { CarouselRef } from 'antd/es/carousel';
 import UploadButton from './UploadButton';
-import { images } from './config';
+import { images, theme } from './config';
 import ImageCarousel from './ImageCarousel';
 
 const labels = ['adidas', 'converse', 'nike'];
@@ -51,15 +46,7 @@ function App() {
   }, []);
 
   return (
-    <ConfigProvider
-      theme={{
-        token: {
-          fontFamily: 'Ubuntu, sans-serif',
-          fontSize: 16,
-          fontWeightStrong: 700,
-        },
-      }}
-    >
+    <ConfigProvider theme={theme}>
       <AntdApp>
         <div className="message">{contextHolder}</div>
         <div className="base">

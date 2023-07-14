@@ -1,3 +1,5 @@
+import { ThemeConfig } from 'antd';
+
 export const images = [
   {
     label: 'nike',
@@ -12,3 +14,11 @@ export const images = [
     url: '/converse.jpg',
   },
 ];
+
+export const theme: ThemeConfig = {
+  token: {
+    fontFamily: 'Ubuntu, sans-serif',
+    fontSize: 16,
+    fontWeightStrong: 700,
+  },
+};
