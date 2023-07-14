@@ -22,3 +22,5 @@ export const theme: ThemeConfig = {
     fontWeightStrong: 700,
   },
 };
+
+export const labels = ['adidas', 'converse', 'nike'];
