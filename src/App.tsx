@@ -6,29 +6,14 @@ import {
   ConfigProvider,
   App as AntdApp,
   message,
-  Carousel,
 } from 'antd';
 import TitleBar from './TitleBar';
-import ArrowButton from './ArrowButton';
 import { CarouselRef } from 'antd/es/carousel';
 import UploadButton from './UploadButton';
+import { images } from './config';
+import ImageCarousel from './ImageCarousel';
 
 const labels = ['adidas', 'converse', 'nike'];
-
-const images = [
-  {
-    label: 'nike',
-    url: '/nike.jpg',
-  },
-  {
-    label: 'adidas',
-    url: '/adidas.jpg',
-  },
-  {
-    label: 'converse',
-    url: '/converse.jpg',
-  },
-];
 
 function App() {
   const imgEl = useRef<HTMLImageElement>(null);
@@ -80,30 +65,12 @@ function App() {
         <div className="base">
           <TitleBar />
           <div>
-            <div style={{ position: 'relative' }}>
-              <img ref={imgEl} style={{ display: 'none' }} alt="for TF.js" />
-              <Carousel
-                ref={carouselEl}
-                swipeToSlide
-                arrows
-                prevArrow={<ArrowButton direction="left" />}
-                nextArrow={<ArrowButton direction="right" />}
-                afterChange={setCarouselCurr}
-              >
-                {images.map((i) => (
-                  <div key={i.label} className="item">
-                    <img src={i.url} alt={i.label} />
-                  </div>
-                ))}
-
-                {customImgURL ? (
-                  <div className="item">
-                    <img src={customImgURL} alt="custom" />
-                  </div>
-                ) : null}
-              </Carousel>
-            </div>
-
+            <ImageCarousel
+              imgRef={imgEl}
+              carouselRef={carouselEl}
+              onCarouselAfterChange={setCarouselCurr}
+              customImgURL={customImgURL}
+            />
             <div>
               <UploadButton
                 messageApi={messageApi}

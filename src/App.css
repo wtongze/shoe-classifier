@@ -21,14 +21,3 @@ body {
     max-width: 1600px;
   }
 }
-
-.item {
-  background-color: black;
-}
-
-.item img {
-  margin: 0 auto;
-  height: 60vh;
-}
-
-
