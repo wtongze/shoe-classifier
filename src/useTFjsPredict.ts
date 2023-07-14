@@ -2,6 +2,15 @@ import * as tf from '@tensorflow/tfjs';
 import { useState, useEffect } from 'react';
 import { labels } from './config';
 
+export interface PredictionResult {
+  [name: string]: number;
+}
+
+interface Result {
+  result: PredictionResult;
+  prediction: string;
+}
+
 function useTFjsPredict() {
   const [model, setModel] = useState<tf.LayersModel>();
 
@@ -20,7 +29,7 @@ function useTFjsPredict() {
     };
   }, [model]);
 
-  return async function (imgEl: HTMLImageElement) {
+  return async function (imgEl: HTMLImageElement): Promise<Result> {
     if (model) {
       const tensor = tf.browser.fromPixels(imgEl);
       const resized = tf.image.resizeBilinear(tensor, [240, 240]).mul(1 / 255);
@@ -34,7 +43,7 @@ function useTFjsPredict() {
         result[labels[i]] = v;
       }
       return {
-        probability: result,
+        result: result,
         prediction: labels[predictions.argMax(0).arraySync() as number],
       };
     } else {

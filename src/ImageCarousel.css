@@ -2,12 +2,6 @@
   background-color: black;
 }
 
-@media (min-width: 1200px) {
-  .item {
-    border-radius: 8px;
-  }
-}
-
 .item img {
   margin: 0 auto;
   height: 60vh;
