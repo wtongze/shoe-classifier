@@ -28,6 +28,10 @@ body {
   margin: 0 16px;
 }
 
+.col-padding {
+  padding: 0 16px;
+}
+
 @media (min-width: 1200px) {
   .base {
     width: 80vw;
