@@ -14,10 +14,38 @@ body {
   margin: 0;
 }
 
+.col-item {
+  display: block;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.button-row {
+  margin: 16px 0;
+}
+
+.alert {
+  margin: 0 16px;
+}
+
 @media (min-width: 1200px) {
   .base {
     width: 80vw;
     margin: 0 auto;
     max-width: 1600px;
+  }
+
+  .col-item {
+    display: block;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .button-row {
+    margin: 0 0 16px;
+  }
+
+  .alert {
+    margin: 0;
   }
 }

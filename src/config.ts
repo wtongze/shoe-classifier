@@ -23,4 +23,10 @@ export const theme: ThemeConfig = {
   },
 };
 
+export const alertContent =
+  'You can use this CNN model to classify the make of the shoe. ' +
+  'It currently only supports Nike, Adidas & Converse. Feel free' +
+  ' to choose an example image or upload your own one and click ' +
+  'the "predict" button to see the results.';
+
 export const labels = ['adidas', 'converse', 'nike'];

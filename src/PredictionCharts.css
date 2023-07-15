@@ -1,0 +1,53 @@
+.prediction-charts {
+  background-color: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prediction-charts {
+    background-color: #f1f3f5;
+  }
+}
+
+.logos {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  justify-content: center;
+}
+
+.logo.selected {
+  border: 4px solid #0575e6;
+}
+
+.logo {
+  height: 80px;
+  width: auto;
+  display: block;
+  padding: 8px;
+  border: 4px solid transparent;
+  aspect-ratio: 1;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 0 8px;
+}
+
+.result-title {
+  margin-top: 0;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+@media (min-width: 1200px) {
+  .logos {
+    margin: 16px 0;
+  }
+
+  .logo {
+    margin: 0 32px;
+  }
+
+  .result-title {
+    margin-top: 0;
+    text-align: center;
+  }
+}

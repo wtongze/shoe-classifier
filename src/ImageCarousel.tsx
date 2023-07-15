@@ -13,7 +13,13 @@ interface Props {
 
 function ImageCarousel(props: Props) {
   return (
-    <div style={{ position: 'relative' }}>
+    <div
+      style={{
+        position: 'relative',
+        backgroundColor: 'black',
+      }}
+      className='carousel-container'
+    >
       <img ref={props.imgRef} style={{ display: 'none' }} alt="for TF.js" />
       <Carousel
         ref={props.carouselRef}

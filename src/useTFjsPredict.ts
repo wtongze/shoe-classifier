@@ -2,11 +2,11 @@ import * as tf from '@tensorflow/tfjs';
 import { useState, useEffect } from 'react';
 import { labels } from './config';
 
-export interface PredictionResult {
+interface PredictionResult {
   [name: string]: number;
 }
 
-interface Result {
+export interface Result {
   result: PredictionResult;
   prediction: string;
 }

@@ -1,6 +1,7 @@
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, Upload } from 'antd';
 import { MessageInstance } from 'antd/es/message/interface';
+import './UploadButton.css';
 
 interface Props {
   messageApi: MessageInstance;
@@ -33,8 +34,11 @@ function UploadButton(props: Props) {
           onError!(e);
         };
       }}
+      className="upload-wrapper"
     >
-      <Button icon={<UploadOutlined />}>Click to Upload</Button>
+      <Button icon={<UploadOutlined />} block size="large">
+        Upload
+      </Button>
     </Upload>
   );
 }
