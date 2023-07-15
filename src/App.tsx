@@ -16,6 +16,7 @@ import useTFjsPredict, { Result } from './useTFjsPredict';
 import PredictionCharts from './PredictionCharts';
 import Footer from './Footer';
 import ActionButtons from './ActionButtons';
+import { CloseOutlined } from '@ant-design/icons';
 
 function App() {
   const imgEl = useRef<HTMLImageElement>(null);
@@ -24,6 +25,7 @@ function App() {
   const [messageApi, contextHolder] = message.useMessage();
   const [customImgURL, setCustomImgURL] = useState<string>();
   const [result, setResult] = useState<Result>();
+  const alertEl = useRef<HTMLDivElement>(null);
 
   const predict = useTFjsPredict();
 
@@ -56,14 +58,23 @@ function App() {
                 onCarouselAfterChange={setCarouselCurr}
                 customImgURL={customImgURL}
               />
-              <Alert
-                style={{ marginTop: 16 }}
-                message={alertContent}
-                type="info"
-                className="alert"
-                showIcon
-                closeIcon
-              />
+              <div ref={alertEl}>
+                <Alert
+                  style={{ marginTop: 16 }}
+                  message={alertContent}
+                  type="info"
+                  className="alert"
+                  showIcon
+                  closeIcon={
+                    <CloseOutlined
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        alertEl.current?.remove();
+                      }}
+                    />
+                  }
+                />
+              </div>
             </Col>
             <Col span={24} className="col-item col-padding">
               <ActionButtons

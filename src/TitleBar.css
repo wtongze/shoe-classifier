@@ -1,11 +1,7 @@
 .title-link {
   font-size: 1.125rem;
   font-weight: 500;
-  text-decoration: none;
-}
-
-.title-link:hover {
-  text-decoration: underline;
+  /* text-decoration: none; */
 }
 
 header {
@@ -19,8 +15,13 @@ header {
   background: linear-gradient(to right, #0575E6, #1677ff);
 }
 
-header .ant-typography {
+header .ant-typography,
+header svg {
   color: white;
+}
+
+header .ant-btn-icon {
+  vertical-align: text-top;
 }
 
 @media (min-width: 1200px) {

@@ -33,7 +33,6 @@ const chartLabels = labels.map(
 
 export const options = {
   responsive: true,
-  aspectRatio: 1.75,
   plugins: {
     legend: {
       display: false,
@@ -95,10 +94,10 @@ function PredictionCharts(props: Props) {
         flexDirection: 'column',
         alignItems: 'center',
       }}
-      className='prediction-charts'
+      className="prediction-charts"
     >
       <div style={{ width: '100%' }}>
-        <h3 className='result-title'>Result</h3>
+        <h3 className="result-title">Result</h3>
         <div className="logos">
           <img
             src="/logo/adidas.svg"
@@ -118,7 +117,13 @@ function PredictionCharts(props: Props) {
         </div>
       </div>
       <div style={{ flex: 1, width: '100%', height: 300 }}>
-        <Bar options={options} data={data} />
+        <Bar
+          options={{
+            ...options,
+            aspectRatio: window.innerWidth > 600 ? 2 : 1.2,
+          }}
+          data={data}
+        />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { Button, Typography } from 'antd';
 import './TitleBar.css'
+import { GithubOutlined } from '@ant-design/icons';
 
 const { Title, Text } = Typography;
 
@@ -12,6 +13,7 @@ function TitleBar() {
         href="https://github.com/wtongze/shoe-classifier"
         target="_blank"
         rel="noreferrer"
+        icon={<GithubOutlined />}
       >
         <Text className="title-link">Github</Text>
       </Button>
