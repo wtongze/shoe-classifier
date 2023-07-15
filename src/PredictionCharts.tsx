@@ -32,6 +32,7 @@ const chartLabels = labels.map(
 
 export const options = {
   responsive: true,
+  aspectRatio: 1.5,
   plugins: {
     legend: {
       display: false,
@@ -60,6 +61,7 @@ export const options = {
       ticks: {
         font,
       },
+      suggestedMax: 1.0
     },
   },
 };

@@ -11,6 +11,10 @@ interface Result {
   prediction: string;
 }
 
+function sleep(num: number) {
+  return new Promise((res) => setTimeout(res, num));
+}
+
 function useTFjsPredict() {
   const [model, setModel] = useState<tf.LayersModel>();
 
@@ -31,6 +35,9 @@ function useTFjsPredict() {
 
   return async function (imgEl: HTMLImageElement): Promise<Result> {
     if (model) {
+      while (imgEl.height === 0 || imgEl.width === 0) {
+        await sleep(100);
+      }
       const tensor = tf.browser.fromPixels(imgEl);
       const resized = tf.image.resizeBilinear(tensor, [240, 240]).mul(1 / 255);
       const expandedTensor = resized.expandDims();

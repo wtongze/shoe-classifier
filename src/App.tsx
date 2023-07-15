@@ -49,7 +49,7 @@ function App() {
         <div className="base">
           <TitleBar />
           <Row>
-            <Col span={24}>
+            <Col span={12}>
               <ImageCarousel
                 imgRef={imgEl}
                 carouselRef={carouselEl}
@@ -57,7 +57,7 @@ function App() {
                 customImgURL={customImgURL}
               />
             </Col>
-            <Col span={24} style={{ padding: '0 16px' }}>
+            <Col span={12} style={{ padding: '0 16px' }}>
               <div>
                 <UploadButton
                   messageApi={messageApi}

@@ -1,8 +1,12 @@
 .item {
   background-color: black;
+  display: flex !important;
+  align-items: center;
+  height: 50vh;
 }
 
 .item img {
   margin: 0 auto;
-  height: 60vh;
+  max-height: 100%;
+  max-width: 100vw;
 }
