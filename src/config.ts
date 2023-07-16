@@ -24,7 +24,7 @@ export const theme: ThemeConfig = {
 };
 
 export const alertContent =
-  'You can use this in-browser convolutional neural network (CNN) model to classify the make of a shoe. ' +
+  'You can use this in-browser convolutional neural network (CNN) model to classify the make of shoes. ' +
   'Click the "Predict" button to see the results.';
 
 export const labels = ['adidas', 'converse', 'nike'];
