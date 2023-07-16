@@ -2,7 +2,7 @@
 
 ![Demo](demo.png)
 
-> An in-browser convolutional neural network (CNN) model used to classify the make of shoes in images.
+> An in-browser convolutional neural network (CNN) model used to classify the brand of shoes in images.
 
 *Note: As of now, it only supports Nike, Adidas and Converse.*
 
