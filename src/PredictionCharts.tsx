@@ -24,7 +24,7 @@ ChartJS.register(
 const font = {
   family: 'Ubuntu, sans-serif',
   size: 20,
-  weight: '600',
+  weight: 600,
 };
 
 const chartLabels = labels.map(
@@ -50,7 +50,7 @@ export const options = {
       bodyFont: {
         ...font,
         size: 16,
-        weight: '500',
+        weight: 500,
       },
     },
   },
@@ -116,7 +116,7 @@ function PredictionCharts(props: Props) {
           />
         </div>
       </div>
-      <div style={{ flex: 1, width: '100%', height: 300 }}>
+      <div style={{ flex: 1, width: '100%', minHeight: 300, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
         <Bar
           options={{
             ...options,

@@ -11,7 +11,6 @@ interface Props {
 function UploadButton(props: Props) {
   return (
     <Upload
-      accept="image/*"
       showUploadList={false}
       onChange={(info) => {
         const { status } = info.file;
